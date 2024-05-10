@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Add Product
+{% endblock %}
+{% block content %}
+<h1>Add Product</h1>
+<h4> This page is used to add Product </h4>
+<form method="POST" enctype="multipart/form-data" >
+  {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Product_name</label>
+    <input type="text" class="form-control"  name="n" placeholder="Enter Product Name">
+  </div>
+
+    <div class="mb-3">
+    <label class="form-label">Product_price</label>
+    <input type="number" class="form-control"  name="p" placeholder="Enter Product price">
+  </div>
+
+      <div class="mb-3">
+    <label class="form-label">Product_year</label>
+    <input type="number" class="form-control"  name="y" placeholder="Enter Product Year">
+  </div>
+      <div class="mb-3">
+    <label class="form-label">Product_desc</label>
+    <input type="text" class="form-control"  name="d" placeholder="Enter Product Description">
+  </div>
+      <div class="mb-3">
+    <label class="form-label">Product_Image</label>
+    <input type="file" class="form-control"  name="i" placeholder="Add Product Image">
+  </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

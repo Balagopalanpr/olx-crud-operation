@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row mt-4 ms-4">
+
+        <div class="col-md-6">
+            <img src="{{a.product_image.url}}" height="400px" width="90%" style="border-radius:10px;">
+        </div>
+        <div class="col-md-6">
+            <h3 class="fw-bold">{{a.product_name}}</h3>
+            <p><i>{{a.product_price}}</i></p>
+            <p><i>{{a.year_reg}}</i></p>
+            <p>{{a.product_desc}}</p>
+            <a href="{% url 'olx:update' a.id %}" class="btn btn-success">UPDATE</a>
+            <a href="{% url 'olx:delete' a.id %}" class="btn btn-danger">DELETE</a>
+        </div>
+        </div>
+</div>
+{% endblock %}
